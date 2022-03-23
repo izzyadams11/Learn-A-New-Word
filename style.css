@@ -1,0 +1,46 @@
+
+    h1{
+      font-family: Paytone One;
+      font-size: 75px;
+      text-align: center;
+      margin-bottom: 5px;
+      color: white;
+      font-weight: 200;
+    }
+    h2 {
+      font-family: Paytone One;
+      font-size: 40px;
+      text-align: center;
+      margin-top: 5px;
+      color: white;
+      font-weight: 75;
+      
+    }
+    body {
+     background-color: #36454F;
+    }
+    div {
+      font-size: 25px;
+      text-align: center;
+    }
+    [type='button']{
+      background-color: #FFDEAD;
+      font-family: Lilita One;
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      border-radius: 10px;
+      margin: 15px;
+      font-weight: 25;
+      color:#FA5F55;
+    }
+
+.boxed {
+  border-radius: 10px;
+  height: 200px;
+  width: auto;
+  background-color: white;
+  margin-top: 50px;
+  font-size: 18px;
+  font-family: Alatsi;
+}
