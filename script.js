@@ -9,32 +9,47 @@ var chosenLetter = "";
 var chosenWords = [];
 var chosenDefinitions=[];
 
-//function used to test onClick function
-function myFunction(){
-  console.log("clicked");
+//function to set the output to blank each time
+function clear(){
+  document.getElementById('output').innerHTML= "hello"; 
 }
 
 //gets id of button clicked
+//calls the clear function 
+//calls the choseWords function
 function reply_click(clicked_id)
   {  
     chosenLetter = clicked_id;
     console.log(chosenLetter);
-    return chosenLetter;
-    
+    clear.call();
+    choseWords.call();
   }
 
-//choses words and definition based on input letter
-function choseWords (chosenLetter){
-  for(var i = 0; i<wordList.length; i++){
+//traverses through the lists and grabs words and definitions based on the letter clicked
+function choseWords(){ 
+  
+    for(var i = 0; i<wordList.length; i++){
     var word = wordList[i];
       if(word[0]== chosenLetter){
       chosenWords = chosenWords.concat(wordList[i] +    "<br>" );
             chosenWords = chosenWords.concat(definitionList[i] + "<br>");
     }
   }
-      return(chosenWords.join(" "));
+ console.log(chosenWords);
+    document.getElementById("output").innerHTML= chosenWords; 
+ 
+
+  
+       
+  return chosenWords; 
 }
 
-//displays the return on the website
-document.getElementById("output").innerHTML=choseWords("f");
-document.querySelector(".button").onclick = function(){myFunction()};
+
+  
+  
+
+
+
+
+
+
