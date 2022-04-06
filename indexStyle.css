@@ -1,0 +1,43 @@
+h1{
+ font-family: Paytone One;
+ font-size: 50px;
+ text-align: center;
+ margin-bottom: 5px;
+ color: white;
+ font-weight: 200;
+}
+
+h2{
+ text-align: center;
+ font-family: Paytone One;
+ font-size: 35px;
+ margin-top: 5px;
+ color: white;
+ font-weight: 75;      
+}
+
+body{
+  background-color: #36454F;
+}
+
+[type='button']{
+ background-color: #FFDEAD;
+ font-family: Lilita One;
+ width: 100px;
+ height: 50px;
+ font-size: 25px;
+ border-radius: 10px;
+ font-weight: 25;
+ color:#FA5F55;
+ text-align: center;
+}
+
+#input{
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+form{
+  text-align: center;
+}

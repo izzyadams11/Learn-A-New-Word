@@ -8,10 +8,11 @@ var definitionList =["(v.) to make thin or slender; to weaken or lessen in force
 var chosenLetter = "";
 var chosenWords = [];
 var chosenDefinitions=[];
+var allWords=[];
 
 //function to set the output to blank each time
 function clear(){
-  document.getElementById('output').innerHTML= "hello"; 
+  chosenWords.length = 0; 
 }
 
 //gets id of button clicked
@@ -20,34 +21,53 @@ function clear(){
 function reply_click(clicked_id)
   {  
     chosenLetter = clicked_id;
-    console.log(chosenLetter);
     clear.call();
     choseWords.call();
+    updateScreen.call();
   }
 
 //traverses through the lists and grabs words and definitions based on the letter clicked
-function choseWords(){ 
-  
+function choseWords(){  
     for(var i = 0; i<wordList.length; i++){
-    var word = wordList[i];
-      if(word[0]== chosenLetter){
-      chosenWords = chosenWords.concat(wordList[i] +    "<br>" );
-            chosenWords = chosenWords.concat(definitionList[i] + "<br>");
+      var word = wordList[i];
+        if(word[0]== chosenLetter){
+          chosenWords = chosenWords.concat(wordList[i] +          "<br>" );
+          allWords = allWords.concat(wordList[i]);
+          chosenWords =                                           chosenWords.concat(definitionList[i] +                  "  <br>");
+        }
     }
-  }
- console.log(chosenWords);
-    document.getElementById("output").innerHTML= chosenWords; 
- 
+  document.getElementById("output").innerHTML=            chosenWords.join(''); 
 
+  return allWords;
+}
+
+function createMessage(name){
+
+  var filteredWords = [];
+  for(var i = 0; i<allWords.length; i++){
+    if(filteredWords.includes(allWords[i], 0)){
+      filteredWords.splice(allWords[i], 1);
+    }
+    filteredWords = filteredWords.concat(allWords[i]); 
+    
+  } 
+  var message = name + ", you have learned " + filteredWords.length + " new words!";
+     
   
-       
-  return chosenWords; 
+  return message;
+}
+
+function getName(){
+  window.name = document.querySelector('input').value;
+  console.log(name);
 }
 
 
-  
-  
 
+function updateScreen(){ 
+  document.getElementById("Heading").innerHTML= createMessage(name);
+ 
+}
 
 
 
