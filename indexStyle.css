@@ -1,3 +1,5 @@
+/* CSS stylesheet for page one */
+/* formats h1 element */
 h1{
  font-family: Paytone One;
  font-size: 50px;
@@ -7,6 +9,7 @@ h1{
  font-weight: 200;
 }
 
+/* formats h2 element */
 h2{
  text-align: center;
  font-family: Paytone One;
@@ -16,10 +19,12 @@ h2{
  font-weight: 75;      
 }
 
+/* formats background */
 body{
   background-color: #36454F;
 }
 
+/* formats submit button */
 [type='button']{
  background-color: #FFDEAD;
  font-family: Lilita One;
@@ -32,12 +37,15 @@ body{
  text-align: center;
 }
 
+/* formats textbox element */
 #input{
   height: 50px;
   width: 150px;
   border-radius: 10px;
 }
 
+/* centers textbox and button */
 form{
   text-align: center;
 }
+

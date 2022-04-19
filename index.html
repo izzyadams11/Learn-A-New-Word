@@ -1,32 +1,32 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
+<!--First page of website for user to insert name-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>replit</title>
-    <link href="indexStyle.css" rel="stylesheet" type="text/css" />
-  </head>
 
- <!--Brings in font links-->
-  <link href="https://fonts.googleapis.com/css?family=Bebas Neue" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Paytone One" rel="stylesheet" type="text/css">
-      <link href="https://fonts.googleapis.com/css?family=Lilita One" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Alatsi" rel="stylesheet" type="text/css">
-  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="indexStyle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<!--Brings in font links-->
+<link href="https://fonts.googleapis.com/css?family=Bebas Neue" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Paytone One" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lilita One" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Alatsi" rel="stylesheet" type="text/css">
+
+
 <body>
-<h1>Today you will learn some new words.</h1>
+  <!--Sets up words of first screen-->
+  <h1>Today you will learn some new words.</h1>
   <h2>First, what is your name?</h2>
+  <!--Creates name box and submit button-->
   <form id="form">
-    <input type ="text" required id="input">
-    <input type="button" value= "Submit" onclick="window.location.href='main.html';getName()";
-  </form>  
-
+    <input type="text" required id="input">
+    <!--Button changes screen and sets the inserted name to a global variable using the getName function-->
+    <input type="button" value="Submit" onclick="window.location.href='main.html';getName()">;
+  </form>
 
 </body>
 <script src="script.js"></script>
 </html>
-
-
-<!--how to switch pages
-  <button onclick="window.location.href='home.html';">
-  -->

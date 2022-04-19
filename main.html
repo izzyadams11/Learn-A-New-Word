@@ -1,5 +1,5 @@
-
  <!DOCTYPE html>
+<!--html for page two-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -15,15 +15,12 @@
         <link href="https://fonts.googleapis.com/css?family=Alatsi" rel="stylesheet" type="text/css">
 
  <!--Creates word elements & buttons and ids them--> 
+ <!-- buttons also call onClick function from javascript-->
   <body>
-    <h1 id="Title">Learn A New Word!</h1>
+   <h1 id="Title">Learn A New Word!</h1>
     <h2 id="Heading">Choose a letter below</h2>
-    <div class="output two" id="output two">
-    <output></output>
-    </div> 
- 
-    <div class ="button">
-      
+      <div class ="button">
+        
       <button type="button" id="a" onClick="reply_click(this.id)" >A</button>
       
       <button type="button" id="b" onClick="reply_click(this.id)">B</button>
@@ -36,7 +33,7 @@
       
       <button type="button" id="f" onClick="reply_click(this.id)">F</button>
 
-            <button type="button" id="g"onClick="reply_click(this.id)">G</button>
+      <button type="button" id="g"onClick="reply_click(this.id)">G</button>
       
       <button type="button" id="h"onClick="reply_click(this.id)">H</button>
       
@@ -76,8 +73,8 @@
       
       <button type="button" id="z" onClick="reply_click(this.id)">Z</button>
       
-   </div>
-  
+     </div>
+    <!--creates output box-->
     <div class="boxed" id="output">
     <output></output>
     </div>

@@ -9,8 +9,9 @@ var chosenLetter = "";
 var chosenWords = [];
 var chosenDefinitions=[];
 var allWords=[];
+var name;
 
-//function to set the output to blank each time
+//function to set the output to blank each time by clearning the list
 function clear(){
   chosenWords.length = 0; 
 }
@@ -18,6 +19,9 @@ function clear(){
 //gets id of button clicked
 //calls the clear function 
 //calls the choseWords function
+//calls the updateScreen function
+//https://www.howtocodeschool.com/2021/03/get-id-of-clicked-element-using-javascript.html
+//^website used to learn how to get the id of a clicked button pulled on March 25, 2022
 function reply_click(clicked_id)
   {  
     chosenLetter = clicked_id;
@@ -27,49 +31,55 @@ function reply_click(clicked_id)
   }
 
 //traverses through the lists and grabs words and definitions based on the letter clicked
+//returns a list with only all of the words clicked
+//sets the output element to the list created with the words and defintions
 function choseWords(){  
-    for(var i = 0; i<wordList.length; i++){
-      var word = wordList[i];
-        if(word[0]== chosenLetter){
-          chosenWords = chosenWords.concat(wordList[i] +          "<br>" );
-          allWords = allWords.concat(wordList[i]);
-          chosenWords =                                           chosenWords.concat(definitionList[i] +                  "  <br>");
-        }
+  for(var i = 0; i<wordList.length; i++){
+    var word = wordList[i];
+    if(word[0]== chosenLetter){
+      chosenWords = chosenWords.concat(wordList[i] + "<br>" );
+      allWords = allWords.concat(wordList[i]);
+      chosenWords = chosenWords.concat(definitionList[i] + "  <br>");
     }
-  document.getElementById("output").innerHTML=            chosenWords.join(''); 
-
+  }
+  document.getElementById("output").innerHTML= chosenWords.join(''); 
   return allWords;
 }
 
+//creates a message that tells the user how many words they have learned
+//gets rid of duplicates and displays the list length
+//parameter: name- grabs the variable name that was set when the user pressed submit
+//return: message- the message created
 function createMessage(name){
-
+  for(var j = 0; j<name.length; j++){
+   var firstLetter = name[0];
+   var rest = name.slice(1);
+    if(firstLetter.toUpperCase() != firstLetter){
+      var newName = firstLetter.toUpperCase() + rest;
+    }
+    else newName = name;
+  }
   var filteredWords = [];
   for(var i = 0; i<allWords.length; i++){
     if(filteredWords.includes(allWords[i], 0)){
       filteredWords.splice(allWords[i], 1);
     }
     filteredWords = filteredWords.concat(allWords[i]); 
-    
   } 
-  var message = name + ", you have learned " + filteredWords.length + " new words!";
-     
-  
+  var message = newName + ", you have learned " + filteredWords.length + " new words!";
   return message;
 }
 
+//gets the name in the first box on the first page
+//called when user presses submit
+//name is set to a global variable
 function getName(){
-  window.name = document.querySelector('input').value;
-  console.log(name);
+  name = document.querySelector('input').value;
+  return name;
 }
 
-
-
+//calls the createMessage function using the global variable name
+//sets createMessage equal to the html h2 element
 function updateScreen(){ 
   document.getElementById("Heading").innerHTML= createMessage(name);
- 
 }
-
-
-
-
-
